@@ -42,75 +42,6 @@ warnings.filterwarnings("ignore", category=MarkupResemblesLocatorWarning)
 
 session = ClientSession()
 
-def banner():
-    print(f'''
-    
-
-
-
-                                                                                    
- {bcolors.FAIL}∞                                                                         π      ∞ 
-   ∞                     ∞                                                      ∞   
-     ∞                                       π                                ∞     
-      ∞∞            ∞                 ∞                                     ∞∞      
-        ∞∞                          ∞∞∞∞∞∞∞∞∞∞∞∞                          ∞∞        
-          ∞∞                 ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞                  ∞∞          
-            ∞π            ∞∞∞∞∞∞∞∞∞∞∞          ∞∞∞∞∞∞∞∞∞∞∞            ∞∞         ∞  
-              ∞ π      ∞∞π∞∞∞∞∞       ∞     π   π    ∞∞∞∞∞π∞∞       ∞∞        π     
-   π            ∞   ∞∞∞∞∞∞∞π         πππππ∞ππ ∞   π      ∞∞∞∞∞∞π   ∞                
-                  ∞∞∞∞∞∞    ∞    π∞  ππ∞π∞π     ππ∞π        ∞∞∞∞∞∞                  
-                ∞∞∞∞∞∞   ∞  ∞ππ ∞        ππ       ∞ ππ∞       ∞∞∞∞∞                 
-               ∞∞∞∞∞ ∞∞   πππ∞ ∞      ∞∞∞∞∞∞∞∞∞π     ∞ ∞∞∞   ∞∞ ∞∞∞∞∞    ∞π  ∞      
-             π∞∞∞∞    π∞∞π       ∞∞∞∞π∞∞∞∞∞∞∞∞ π∞∞π    π π∞∞∞    π∞∞∞∞        ∞     
-            ∞∞∞∞∞      ∞π∞∞    ∞∞∞∞∞  π∞    ∞  ∞∞∞∞∞∞π  π∞∞∞π      ∞∞∞∞π            
-           ∞∞∞∞∞  ∞  πππ   ∞∞∞∞∞∞  ∞ ∞ ∞π   ∞ ∞ ∞  ∞π∞∞∞∞π  ∞ ∞     ∞∞∞∞            
-          ∞∞∞∞∞     ππ π  ∞ ∞∞∞ ∞∞  ∞π ∞πππ∞∞  ∞  ∞ π∞∞∞      ∞∞     ∞∞∞∞           
-          ∞∞∞∞    π ∞ π   ∞∞∞∞∞∞∞ ∞∞ ∞∞ ∞π∞∞π∞∞ ∞∞ ∞∞∞∞∞∞π    π∞∞     ∞∞∞∞          
-      π  ∞∞∞∞  π∞ π∞     ∞∞∞∞∞∞π ∞∞ ∞∞∞π∞∞∞∞∞ ∞∞ ∞∞ ∞∞∞ππ∞∞    ππ  π   ∞∞∞∞         
-         ∞∞∞π    π∞     ∞  ∞∞∞∞∞∞∞∞ππ∞∞∞∞∞∞∞∞∞∞πππ∞∞∞∞∞∞∞∞∞∞  ∞  π     ∞∞∞∞         
-        π∞∞∞      π     ∞∞∞∞     ∞∞π∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞   ∞∞∞∞∞∞    ππ      ∞∞∞         
-        ∞∞∞∞     π∞ ∞  ∞∞∞∞∞πππ∞∞∞π∞∞  {bcolors.BOLD}{bcolors.HEADER}HELIOS{bcolors.ENDC}{bcolors.FAIL}  ∞∞ ∞∞∞ππ∞∞∞π∞∞  π  ∞     ∞∞∞∞{bcolors.ENDC}        
- {bcolors.BOLD}∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ππ   ∞∞∞∞ ∞ππ∞∞{bcolors.BOLD}{bcolors.WARNING}v0.3{bcolors.ENDC}{bcolors.BOLD}ππππ∞π∞∞∞∞   ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  
-        ∞∞∞      ∞π    ∞∞∞∞πππππ∞∞ ∞∞∞∞∞∞∞∞π∞∞∞∞∞ ∞ππ∞∞∞∞∞∞∞∞   π ∞     π∞∞∞        
-        ∞∞∞∞     ∞     π∞∞∞π∞∞∞∞∞∞  ππ∞∞∞∞π∞π∞π∞ ∞π∞∞∞∞∞∞∞∞∞∞     ∞     π∞∞∞        
-        ∞∞∞∞     π     ∞∞∞∞∞   ∞∞∞∞∞ π∞∞∞∞∞ ∞∞π  ∞∞∞∞   ∞∞∞∞π π   ∞     ∞∞∞∞        
-        ∞∞∞∞   π π∞     ∞∞∞∞∞∞∞  ∞∞ ∞ ∞∞∞π π∞∞ ∞∞∞∞ ∞∞∞∞∞∞∞π   π ∞π    ∞∞∞∞         
-         ∞∞∞     ∞       ∞∞∞∞∞ ∞∞ ∞∞∞∞ π∞ ππ∞ π∞∞ ∞∞∞π∞∞∞∞∞     ∞∞ π   ∞∞∞∞         
-         ∞∞∞∞  π   π      ∞ ∞∞∞ ∞∞∞ ∞ ∞∞∞π∞∞ ∞ ∞∞∞∞ ∞∞∞∞π∞     ππ∞     ∞∞∞          
-          ∞∞∞∞  ∞   ∞      ∞∞∞∞∞π∞ ∞∞ ∞π∞∞∞∞π∞∞ ∞∞π ∞∞∞ππ   π  ππ     ∞∞∞∞          
-           ∞∞∞∞    π∞∞π   ∞ ∞∞∞∞∞∞∞∞∞π∞ ∞π∞∞∞ ∞ ∞π∞∞∞∞∞∞   π  ∞∞     ∞∞∞∞           
-         π  ∞∞∞∞   ∞ ∞ π  ∞    ∞∞∞∞∞∞∞ ∞∞∞∞∞∞ ∞∞∞∞∞π∞   ∞∞  ππ      ∞∞∞∞            
-             ∞∞∞∞π     π∞ ∞       ∞∞∞∞∞∞π∞∞∞∞ ∞∞∞∞        ∞∞∞     ∞∞∞∞∞     ∞       
-              ∞∞∞∞∞   ∞∞  ∞∞         ∞  ∞∞∞π  ∞         ∞π  π∞   ∞∞π∞∞              
-                ∞∞∞∞∞π      π∞π   π      ∞π         ∞ππ ∞     π∞∞∞∞∞                
-  ∞    π         π∞∞∞∞∞         π∞π  π∞  π   ∞∞π ∞ π         ∞∞∞∞∞                  
-                ∞∞ π∞∞∞∞∞∞         ∞π    ππππ   ∞        π∞∞∞∞∞∞  ∞∞                
-              ∞∞      ∞∞∞∞∞∞∞                         π∞∞∞∞∞∞∞      ∞∞              
-            ∞∞           ∞∞∞π∞∞∞∞∞∞              ∞∞∞∞∞∞∞∞∞∞           ∞∞            
-    π      ∞                π∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞π∞∞∞∞∞∞π                ∞π          
-         ∞         ∞∞             ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞              π         ∞π        
-       ∞                                            π             ∞         ∞       
-     ∞π π                                  ∞                        ∞         ∞     
-   ∞π                                                                 π         ∞   
- ∞∞                                                                               ∞{bcolors.ENDC}
-                                                                                    
-                            {bcolors.BOLD}{bcolors.WARNING}Helios - Automated XSS Scanner{bcolors.ENDC}
-                    {bcolors.BOLD}{bcolors.PURPLE}Author: {bcolors.ENDC}{bcolors.BOLD}@stuub   |   {bcolors.BOLD}{bcolors.PURPLE}Github: {bcolors.ENDC}{bcolors.BOLD}https://github.com/stuub{bcolors.ENDC}
-
-
-    ''')
-
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    PARAM = '\033[96m'
-    PURPLE = '\033[95m'
 
 class BrowserNotFoundError(Exception):
     pass
@@ -250,7 +181,6 @@ class XSSScanner:
             driver.get(self.target_url)
             for name, value in self.cookies.items():
                 driver.add_cookie({'name': name, 'value': value})
-
             return driver
 
         except BrowserNotFoundError as e:
